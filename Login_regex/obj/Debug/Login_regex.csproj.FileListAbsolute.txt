@@ -1,0 +1,6 @@
+c:\users\kttsoft\documents\visual studio 2015\Projects\Login_regex\Login_regex\bin\Debug\Login_regex.exe.config
+c:\users\kttsoft\documents\visual studio 2015\Projects\Login_regex\Login_regex\bin\Debug\Login_regex.exe
+c:\users\kttsoft\documents\visual studio 2015\Projects\Login_regex\Login_regex\bin\Debug\Login_regex.pdb
+c:\users\kttsoft\documents\visual studio 2015\Projects\Login_regex\Login_regex\obj\Debug\Login_regex.csprojResolveAssemblyReference.cache
+c:\users\kttsoft\documents\visual studio 2015\Projects\Login_regex\Login_regex\obj\Debug\Login_regex.exe
+c:\users\kttsoft\documents\visual studio 2015\Projects\Login_regex\Login_regex\obj\Debug\Login_regex.pdb
