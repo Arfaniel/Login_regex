@@ -12,16 +12,15 @@ namespace Login_regex
     {
         public static bool logCheck(string str)
         {
-            Regex letters = new Regex(@"[A-Za-z0-9\W]+");
-
-            Match m = letters.Match(str);
+            Regex Upletters = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{4,20}$");
+            Match m = Upletters.Match(str);
             if (m.Success)
                 return true;
             return false;
         }
         static void Main(string[] args)
         {
-            string temp = "atael01!";
+            string temp = "datael01!";
             Console.WriteLine(logCheck(temp));
         }
     }
