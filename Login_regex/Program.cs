@@ -12,7 +12,7 @@ namespace Login_regex
     {
         public static bool logCheck(string str)
         {
-            Regex letters = new Regex(@"[A-Z][a-z][0-9][\W]+");
+            Regex letters = new Regex(@"[A-Za-z0-9\W]+");
 
             Match m = letters.Match(str);
             if (m.Success)
@@ -21,7 +21,7 @@ namespace Login_regex
         }
         static void Main(string[] args)
         {
-            string temp = "atael01D!";
+            string temp = "atael01!";
             Console.WriteLine(logCheck(temp));
         }
     }
