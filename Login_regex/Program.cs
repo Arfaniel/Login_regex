@@ -18,10 +18,48 @@ namespace Login_regex
                 return true;
             return false;
         }
+
+        public static bool emailCheck(string str)
+        {
+            Regex email = new Regex(@"[a-z0-9]{2,}\@[a-z0-9]+\/");
+            Match m = email.Match(str);
+            if (m.Success)
+                return true;
+            return false;
+        }
+
         static void Main(string[] args)
         {
-            string temp = "datael01!";
-            Console.WriteLine(logCheck(temp));
+            string email = "sataes4()l@ua.fm";
+            Console.WriteLine(emailCheck(email));
+
+            //string temp = "datael01!";
+            //Console.WriteLine(logCheck(temp));
+            //string login, password;
+            //for(;;)
+            //{
+            //    Console.Clear();
+            //    Console.WriteLine("Login:");
+            //    login = Console.ReadLine();
+            //    if (logCheck(login) == false)
+            //        Console.WriteLine("Минимум: 1 заглавная буква, 1 цифра, 1 спец-символ");
+            //    else
+            //        break;
+            //}
+            //for(;;)
+            //{
+            //    Console.Clear();
+            //    Console.WriteLine(login);
+            //    Console.WriteLine("Passowrd:");
+            //    password = Console.ReadLine();
+            //    if (logCheck(password)==false)
+            //        Console.WriteLine("Минимум: 1 заглавная буква, 1 цифра, 1 спец-символ");
+            //    else
+            //        break;
+            //}
+                
+            
+
         }
     }
 }
