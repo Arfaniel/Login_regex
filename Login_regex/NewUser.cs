@@ -112,7 +112,12 @@ namespace Login_regex
             Console.WriteLine(login);
             Console.WriteLine(password);
             Console.WriteLine(email);
-            Console.WriteLine(db);
+            Console.WriteLine(db.ToShortDateString());
         }
+        public void toFile()
+        {
+
+        }
+        
     }
 }
