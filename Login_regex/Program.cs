@@ -32,7 +32,8 @@ namespace Login_regex
         public static bool dateCheck(string str)
         {
             DateTime DB = new DateTime();
-            Regex date = new Regex(@"[0-9]{1,2}\.?\,?\\?[0-9]{1,2}\.?\,?\\?[0-9]{4}");
+            Regex date = new Regex(@"^[0-9]{1,2}\.?\,?\\?\/?[0-9]{1,2}\.?\,?\\?\/?[0-9]{4}$");
+            DateTime db = DateTime.Parse(str);
             Match m = date.Match(str);
             if (m.Success)
                 return true;
@@ -43,69 +44,73 @@ namespace Login_regex
         {
 
             string login, password, email, date;
-            date = "10,10.2158423";
+            DateTime db;
+            date = "10,10.2152";
             Console.WriteLine(dateCheck(date));
-            //for (;;)
-            //{
-            //    Console.Clear();
-            //    Console.WriteLine("Login:");
-            //    login = Console.ReadLine();
-            //    if (logCheck(login) == false)
-            //    {
-            //        Console.WriteLine("Минимум: 1 заглавная буква, 1 цифра, 1 спец-символ");
-            //        Thread.Sleep(2000);
-            //    }
-                    
-            //    else
-            //        break;
-            //}
-            //for (;;)
-            //{
-            //    Console.Clear();
-            //    Console.WriteLine(login);
-            //    Console.WriteLine("Passowrd:");
-            //    password = Console.ReadLine();
-            //    if (logCheck(password) == false)
-            //    {
-            //        Console.WriteLine("Минимум: 1 заглавная буква, 1 цифра, 1 спец-символ");
-            //        Thread.Sleep(2000);
-            //    }
-                    
-            //    else
-            //        break;
-            //}
-            //for (;;)
-            //{
-            //    Console.Clear();
-            //    Console.WriteLine(login);
-            //    Console.WriteLine("Passowrd:      ");
-            //    Console.WriteLine("Email:");
-            //    email = Console.ReadLine();
-            //    if (emailCheck(email) == false)
-            //    {
-            //        Console.WriteLine("Вы ввели некорректный е-мейл");
-            //        Thread.Sleep(2000);
-            //    }
-                    
-            //    else
-            //        break;
-            //}
-            //for (;;)
-            //{
-            //    Console.Clear();
-            //    Console.WriteLine(login);
-            //    Console.WriteLine("Passowrd:      ");
-            //    Console.WriteLine(login);
-            //    email = Console.ReadLine();
-            //    if (emailCheck(email) == false)
-            //    {
-            //        Console.WriteLine("Вы ввели некорректную дату");
-            //        Thread.Sleep(2000);
-            //    }
+            for (;;)
+            {
+                Console.Clear();
+                Console.WriteLine("Login:");
+                login = Console.ReadLine();
+                if (logCheck(login) == false)
+                {
+                    Console.WriteLine("Минимум: 1 заглавная буква, 1 цифра, 1 спец-символ");
+                    Thread.Sleep(2000);
+                }
 
-            //    else
-            //        break;
-            //}
+                else
+                    break;
+            }
+            for (;;)
+            {
+                Console.Clear();
+                Console.WriteLine(login);
+                Console.WriteLine("Passowrd:");
+                password = Console.ReadLine();
+                if (logCheck(password) == false)
+                {
+                    Console.WriteLine("Минимум: 1 заглавная буква, 1 цифра, 1 спец-символ");
+                    Thread.Sleep(2000);
+                }
+
+                else
+                    break;
+            }
+            for (;;)
+            {
+                Console.Clear();
+                Console.WriteLine(login);
+                Console.WriteLine("Passowrd:      ");
+                Console.WriteLine("Email:");
+                email = Console.ReadLine();
+                if (emailCheck(email) == false)
+                {
+                    Console.WriteLine("Вы ввели некорректный е-мейл");
+                    Thread.Sleep(2000);
+                }
+
+                else
+                    break;
+            }
+            for (;;)
+            {
+                Console.Clear();
+                Console.WriteLine(login);
+                Console.WriteLine("Passowrd:      ");
+                Console.WriteLine("Email:");
+                Console.WriteLine(email);
+                Console.WriteLine("Date of birth:");
+                date = Console.ReadLine();
+                if (dateCheck(date) == false)
+                {
+                    Console.WriteLine("Вы ввели некорректную дату");
+                    Thread.Sleep(2000);
+                }
+                else
+                    db = DateTime.Parse(date);
+                    break;
+            }
+            
         }
     }
 }
