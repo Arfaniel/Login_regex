@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.IO;
 
 namespace Login_regex
 {
@@ -39,6 +40,14 @@ namespace Login_regex
             if (m.Success)
                 return true;
             return false;
+        }
+        private string convertDate(string str)
+        {
+            string temp;
+            Regex date = new Regex(@"\,");
+            string target = ".";
+            temp = date.Replace(str, target);
+            return temp;
         }
         public void Registration()
         {
@@ -103,7 +112,11 @@ namespace Login_regex
                     Thread.Sleep(2000);
                 }
                 else
-                    db = DateTime.Parse(date);
+                {
+                    date = convertDate(date);
+                    db = Convert.ToDateTime(date);
+                }
+                    
                 break;
             }
         }
@@ -116,8 +129,30 @@ namespace Login_regex
         }
         public void toFile()
         {
-
+            Stream st = new FileStream("users.txt", FileMode.OpenOrCreate);
+            using (BinaryReader br = new BinaryReader(st))
+            {
+                byte[] bt = br.ReadBytes(1024);
+            }
+            st = new FileStream("users.txt", FileMode.Append);
+            using (BinaryWriter br = new BinaryWriter(st))
+            {
+                br.Write(login.ToArray());
+                br.Write(',');
+                br.Write(password.ToArray());
+                br.Write(',');
+                br.Write(email.ToArray());
+                br.Write(',');
+                br.Write(db.ToShortDateString());
+                br.Write('\n');
+            }
         }
-        
+        private bool checkInFile()
+        {
+            using (FileStream fstream = File.OpenRead("users.txt"))
+            {
+
+            }
+        }
     }
 }

@@ -4,3 +4,9 @@ c:\users\kttsoft\documents\visual studio 2015\Projects\Login_regex\Login_regex\b
 c:\users\kttsoft\documents\visual studio 2015\Projects\Login_regex\Login_regex\obj\Debug\Login_regex.csprojResolveAssemblyReference.cache
 c:\users\kttsoft\documents\visual studio 2015\Projects\Login_regex\Login_regex\obj\Debug\Login_regex.exe
 c:\users\kttsoft\documents\visual studio 2015\Projects\Login_regex\Login_regex\obj\Debug\Login_regex.pdb
+C:\Users\VIVI\Documents\Visual Studio 2015\Projects\LoginRegex\Login_regex\bin\Debug\Login_regex.exe.config
+C:\Users\VIVI\Documents\Visual Studio 2015\Projects\LoginRegex\Login_regex\obj\Debug\Login_regex.exe
+C:\Users\VIVI\Documents\Visual Studio 2015\Projects\LoginRegex\Login_regex\obj\Debug\Login_regex.pdb
+C:\Users\VIVI\Documents\Visual Studio 2015\Projects\LoginRegex\Login_regex\obj\Debug\Login_regex.csprojResolveAssemblyReference.cache
+C:\Users\VIVI\Documents\Visual Studio 2015\Projects\LoginRegex\Login_regex\bin\Debug\Login_regex.exe
+C:\Users\VIVI\Documents\Visual Studio 2015\Projects\LoginRegex\Login_regex\bin\Debug\Login_regex.pdb

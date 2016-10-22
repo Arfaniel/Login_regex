@@ -11,13 +11,13 @@ namespace Login_regex
 {
     class Program
     {
-        
+
         static void Main(string[] args)
         {
             NewUser user = new NewUser();
             user.Registration();
-            user.Print();
-           
+            user.toFile();
+
         }
     }
 }
