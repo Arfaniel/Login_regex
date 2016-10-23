@@ -16,8 +16,8 @@ namespace Login_regex
         {
             NewUser user = new NewUser();
             user.Registration();
-            user.toFile();
-
+            
+            
         }
     }
 }

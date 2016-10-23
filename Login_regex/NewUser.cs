@@ -61,6 +61,11 @@ namespace Login_regex
                     Console.WriteLine("Минимум: 1 заглавная буква, 1 цифра, 1 спец-символ");
                     Thread.Sleep(2000);
                 }
+                if(isInFile(login)==true)
+                {
+                    Console.WriteLine("Такой пользователь уже существует");
+                    Thread.Sleep(2000);
+                }
 
                 else
                     break;
@@ -92,7 +97,11 @@ namespace Login_regex
                     Console.WriteLine("Вы ввели некорректный е-мейл");
                     Thread.Sleep(2000);
                 }
-
+                if (isInFile(email) == true)
+                {
+                    Console.WriteLine("Такой пользователь уже существует");
+                    Thread.Sleep(2000);
+                }
                 else
                     break;
             }
@@ -115,10 +124,10 @@ namespace Login_regex
                 {
                     date = convertDate(date);
                     db = Convert.ToDateTime(date);
+                    break;
                 }
-                    
-                break;
-            }
+           }
+            toFile();
         }
         public void Print()
         {
@@ -127,7 +136,7 @@ namespace Login_regex
             Console.WriteLine(email);
             Console.WriteLine(db.ToShortDateString());
         }
-        public void toFile()
+        private void toFile()
         {
             Stream st = new FileStream("users.txt", FileMode.OpenOrCreate);
             using (BinaryReader br = new BinaryReader(st))
@@ -143,16 +152,30 @@ namespace Login_regex
                 br.Write(',');
                 br.Write(email.ToArray());
                 br.Write(',');
-                br.Write(db.ToShortDateString());
+                br.Write(db.ToShortDateString().ToArray());
                 br.Write('\n');
             }
         }
-        private bool checkInFile()
+        private bool isInFile(string check)
         {
+            string textFromFile;
             using (FileStream fstream = File.OpenRead("users.txt"))
             {
-
+                byte[] array = new byte[fstream.Length];
+                fstream.Read(array, 0, array.Length);
+                textFromFile = System.Text.Encoding.Default.GetString(array);
             }
+            string[] arrUser = textFromFile.Split('\n');
+            for (int i = 0; i < arrUser.Length; i++)
+            {
+                string[] userFields = arrUser[i].Split(',');
+                for (int j = 0; j < userFields.Length; j++)
+                {
+                    if (userFields[j] == check)
+                        return true;
+                }
+            }
+            return false;
         }
     }
 }
